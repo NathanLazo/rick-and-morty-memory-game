@@ -148,14 +148,13 @@ const MemoryGame = ({ characters, howManyPairs, randomCharacters }) => {
                 onClick={manageSelectedPair}
               >
                 <motion.div
-                  initial={false}
+                  initial={{opacity: 0}}
                   animate={
                     renderedImagesArray.includes(character.id) || matchedPairs.includes(character.id + "")
-                      ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
-                      : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+                      ? { opacity: 1 }
+                      : {opacity: 0}
                   }
-                  transition={{ duration: .75 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: .6 }}
                   onClick={() => {setRenderedImagesArray([...renderedImagesArray,character.id])}}
                 >
                   <img
@@ -177,14 +176,13 @@ const MemoryGame = ({ characters, howManyPairs, randomCharacters }) => {
                 onClick={manageSelectedPair}
               >
                 <motion.div
-                  initial={false}
+                  initial={{opacity: 0}}
                   animate={
                     renderedImagesArray.includes(character.id + "-pair") || matchedPairs.includes(character.id + "-pair")
-                      ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
-                      : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+                      ? { opacity: 1 }
+                      : {opacity: 0}
                   }
-                  transition={{ duration: .75 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: .6 }}
                   onClick={() => {setRenderedImagesArray([...renderedImagesArray,character.id + "-pair"])}}
                 >
                   <img
