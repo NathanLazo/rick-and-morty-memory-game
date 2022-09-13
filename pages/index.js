@@ -113,8 +113,6 @@ const MemoryGame = ({ characters, howManyPairs, randomCharacters }) => {
   }, [renderedImagesArray]);
 
 
-  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
   return (
     <>
       <Head>
@@ -129,6 +127,9 @@ const MemoryGame = ({ characters, howManyPairs, randomCharacters }) => {
           width={250}
           height={100}
         />
+      </div>
+      <div className="absolute bottom-0 left-0 text-indigo-800">
+        Nathan was here
       </div>
       {
         matchedPairs.length === howManyPairs * 2 ? (
